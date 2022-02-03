@@ -6,16 +6,18 @@ public class NonConjuredItem extends Item {
     }
 
     public void updateQuality() {
-        if (this.quality > 0) {
-            this.quality--;
-        }
+        decrementQuality();
 
         this.sellIn--;
 
         if (this.sellIn < 0) {
-            if (this.quality > 0) {
-                this.quality--;
-            }
+            decrementQuality();
+        }
+    }
+
+    private void decrementQuality() {
+        if (this.quality > 0) {
+            this.quality--;
         }
     }
 

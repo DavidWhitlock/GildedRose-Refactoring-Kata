@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 
-public class AgedBrieTest {
+public class AgedBrieTest extends NonConjuredItemTest {
 
     @Test
     void agedBrieIncreasesInQualityAsItGetsOlder() {
@@ -36,20 +36,11 @@ public class AgedBrieTest {
 
     @Test
     void sameQualityAfter10Days() {
-        int sellIn = 2;
-        int quality = 0;
-        AgedBrie item = new AgedBrie(sellIn, quality);
-        AgedBrie gildedRoseItem = new AgedBrie(sellIn, quality);
+        sameQualityAfter10Days(2, 0);
+    }
 
-        GildedRose rose = new GildedRose(new Item[] { gildedRoseItem });
-
-        for (int day = 0; day < 10; day++) {
-            rose.updateQuality();
-            item.updateQuality();
-
-            assertThat("Failed sellIn on day " + 0, item.sellIn, equalTo(gildedRoseItem.sellIn));
-            assertThat("Failed quality on day " + 0, item.quality, equalTo(gildedRoseItem.quality));
-
-        }
+    @Override
+    protected NonConjuredItem createNonConjuredObject(int sellIn, int quality) {
+        return new AgedBrie(sellIn, quality);
     }
 }

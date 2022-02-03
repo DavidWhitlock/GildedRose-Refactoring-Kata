@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 
-public class BackstagePassTest {
+public class BackstagePassTest extends NonConjuredItemTest {
 
     @Test
     void qualityIncreaseBy2When10DaysLeft() {
@@ -28,20 +28,9 @@ public class BackstagePassTest {
         sameQualityAfter10Days(5, 49);
     }
 
-    private void sameQualityAfter10Days(int sellIn, int quality) {
-        BackstagePass item = new BackstagePass(sellIn, quality);
-        BackstagePass gildedRoseItem = new BackstagePass(sellIn, quality);
-
-        GildedRose rose = new GildedRose(new Item[] { gildedRoseItem });
-
-        for (int day = 0; day < 10; day++) {
-            rose.updateQuality();
-            item.updateQuality();
-
-            assertThat("Failed sellIn on day " + 0, item.sellIn, equalTo(gildedRoseItem.sellIn));
-            assertThat("Failed quality on day " + 0, item.quality, equalTo(gildedRoseItem.quality));
-
-        }
+    @Override
+    protected NonConjuredItem createNonConjuredObject(int sellIn, int quality) {
+        return new BackstagePass(sellIn, quality);
     }
 
 }

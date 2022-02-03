@@ -19,6 +19,15 @@ public class TesttextFixtureTest extends InvokeMainTestCase {
         assertThat(text, equalTo(expected));
     }
 
+    @Test
+    void outputOf10DaysOfTesttextFixtureDoesNotChange() throws IOException {
+        MainMethodResult result = invokeMain(TexttestFixture.class, "10");
+        String text = result.getTextWrittenToStandardOut();
+        String expected = readResourceAsString("expectedTexttestFixture10Days.txt");
+
+        assertThat(text, equalTo(expected));
+    }
+
     private String readResourceAsString(String resourceName) throws IOException {
         InputStream input = getClass().getResourceAsStream(resourceName);
         assertThat(input, notNullValue());

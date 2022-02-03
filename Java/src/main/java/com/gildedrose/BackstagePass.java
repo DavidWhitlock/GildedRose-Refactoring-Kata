@@ -1,11 +1,12 @@
 package com.gildedrose;
 
-public class BackstagePass extends Item {
+public class BackstagePass extends NonConjuredItem {
     public BackstagePass(int sellIn, int quality) {
         super("Backstage passes to a TAFKAL80ETC concert", sellIn, quality);
 
     }
 
+    @Override
     public void updateQuality() {
         incrementQuality();
 
@@ -25,9 +26,4 @@ public class BackstagePass extends Item {
 
     }
 
-    private void incrementQuality() {
-        if (this.quality < 50) {
-            this.quality++;
-        }
-    }
 }

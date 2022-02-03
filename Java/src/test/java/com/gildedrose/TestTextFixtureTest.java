@@ -8,22 +8,22 @@ import java.io.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 
-public class TesttextFixtureTest extends InvokeMainTestCase {
+public class TestTextFixtureTest extends InvokeMainTestCase {
 
     @Test
-    void outputOfTesttextFixtureDoesNotChange() throws IOException {
-        MainMethodResult result = invokeMain(TexttestFixture.class);
+    void outputOfTestTextFixtureDoesNotChange() throws IOException {
+        MainMethodResult result = invokeMain(TextTestFixture.class);
         String text = result.getTextWrittenToStandardOut();
-        String expected = readResourceAsString("expectedTexttestFixture.txt");
+        String expected = readResourceAsString("expectedTestTextFixture.txt");
 
         assertThat(text, equalTo(expected));
     }
 
     @Test
-    void outputOf10DaysOfTesttextFixtureDoesNotChange() throws IOException {
-        MainMethodResult result = invokeMain(TexttestFixture.class, "10");
+    void outputOf10DaysOfTestTextFixtureDoesNotChange() throws IOException {
+        MainMethodResult result = invokeMain(TextTestFixture.class, "10");
         String text = result.getTextWrittenToStandardOut();
-        String expected = readResourceAsString("expectedTexttestFixture10Days.txt");
+        String expected = readResourceAsString("expectedTestTextFixture10Days.txt");
 
         assertThat(text, equalTo(expected));
     }

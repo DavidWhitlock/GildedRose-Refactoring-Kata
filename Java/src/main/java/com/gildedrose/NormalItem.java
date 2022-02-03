@@ -18,8 +18,12 @@ public class NormalItem extends AbstractItem {
 
     private void decrementQuality() {
         if (this.quality > 0) {
-            this.quality--;
+            this.quality -= getDecrement();
         }
+    }
+
+    protected int getDecrement() {
+        return 1;
     }
 
 }

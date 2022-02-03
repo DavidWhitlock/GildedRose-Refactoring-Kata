@@ -3,7 +3,7 @@ package com.gildedrose;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 
-public abstract class NonConjuredItemTest {
+public abstract class NonConjuredItemTestCase {
     protected void sameQualityAfter10Days(NonConjuredItem item, Item gildedRoseItem) {
         GildedRose rose = new GildedRose(new Item[] {gildedRoseItem});
 

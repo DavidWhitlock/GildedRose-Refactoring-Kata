@@ -5,11 +5,11 @@ import org.junit.jupiter.api.Test;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 
-public class NonConjuredItemTest extends NonConjuredItemTestCase {
+public class NormalItemTest extends AbstractItemTestCase {
 
     @Test
     void qualityDegradesTwiceAsFastAfterSellBy() {
-        NonConjuredItem item = createNonConjuredObject(0, 2);
+        AbstractItem item = createNonConjuredObject(0, 2);
         item.updateQuality();
         assertThat(item.quality, equalTo(0));
     }
@@ -22,7 +22,7 @@ public class NonConjuredItemTest extends NonConjuredItemTestCase {
 
 
     @Override
-    protected NonConjuredItem createNonConjuredObject(int sellIn, int quality) {
-        return new NonConjuredItem("Non Conjured", sellIn, quality);
+    protected AbstractItem createNonConjuredObject(int sellIn, int quality) {
+        return new NormalItem("Non Conjured", sellIn, quality);
     }
 }

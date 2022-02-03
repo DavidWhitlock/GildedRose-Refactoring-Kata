@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 
-public class AgedBrieTest extends NonConjuredItemTestCase {
+public class AgedBrieTest extends AbstractItemTestCase {
 
     @Test
     void agedBrieIncreasesInQualityAsItGetsOlder() {
@@ -40,7 +40,7 @@ public class AgedBrieTest extends NonConjuredItemTestCase {
     }
 
     @Override
-    protected NonConjuredItem createNonConjuredObject(int sellIn, int quality) {
+    protected AbstractItem createNonConjuredObject(int sellIn, int quality) {
         return new AgedBrie(sellIn, quality);
     }
 }

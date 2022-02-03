@@ -1,6 +1,6 @@
 package com.gildedrose;
 
-public class BackstagePass extends NonConjuredItem {
+public class BackstagePass extends AbnormalItem {
     public BackstagePass(int sellIn, int quality) {
         super("Backstage passes to a TAFKAL80ETC concert", sellIn, quality);
 

@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 
-public class BackstagePassTest extends NonConjuredItemTestCase {
+public class BackstagePassTest extends AbstractItemTestCase {
 
     @Test
     void qualityIncreaseBy2When10DaysLeft() {
@@ -29,7 +29,7 @@ public class BackstagePassTest extends NonConjuredItemTestCase {
     }
 
     @Override
-    protected NonConjuredItem createNonConjuredObject(int sellIn, int quality) {
+    protected AbstractItem createNonConjuredObject(int sellIn, int quality) {
         return new BackstagePass(sellIn, quality);
     }
 

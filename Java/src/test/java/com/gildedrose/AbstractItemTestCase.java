@@ -1,12 +1,10 @@
 package com.gildedrose;
 
-import org.junit.jupiter.api.Test;
-
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
 
-public abstract class NonConjuredItemTestCase {
-    protected void sameQualityAfter10Days(NonConjuredItem item, Item gildedRoseItem) {
+public abstract class AbstractItemTestCase {
+    protected void sameQualityAfter10Days(AbstractItem item, Item gildedRoseItem) {
         GildedRose rose = new GildedRose(new Item[] {gildedRoseItem});
 
         for (int day = 0; day < 10; day++) {
@@ -23,5 +21,5 @@ public abstract class NonConjuredItemTestCase {
         sameQualityAfter10Days(createNonConjuredObject(sellIn, quality), createNonConjuredObject(sellIn, quality));
     }
 
-    protected abstract NonConjuredItem createNonConjuredObject(int sellIn, int quality);
+    protected abstract AbstractItem createNonConjuredObject(int sellIn, int quality);
 }

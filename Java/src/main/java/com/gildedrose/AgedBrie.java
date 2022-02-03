@@ -1,6 +1,6 @@
 package com.gildedrose;
 
-public class AgedBrie extends NonConjuredItem {
+public class AgedBrie extends AbnormalItem {
     public AgedBrie(int sellIn, int quality) {
         super("Aged Brie", sellIn, quality);
     }

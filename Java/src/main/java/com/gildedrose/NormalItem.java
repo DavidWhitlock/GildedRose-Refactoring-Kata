@@ -1,10 +1,11 @@
 package com.gildedrose;
 
-public class NonConjuredItem extends Item {
-    public NonConjuredItem(String name, int sellIn, int quality) {
+public class NormalItem extends AbstractItem {
+    public NormalItem(String name, int sellIn, int quality) {
         super(name, sellIn, quality);
     }
 
+    @Override
     public void updateQuality() {
         decrementQuality();
 
@@ -21,9 +22,4 @@ public class NonConjuredItem extends Item {
         }
     }
 
-    protected void incrementQuality() {
-        if (this.quality < 50) {
-            this.quality++;
-        }
-    }
 }
